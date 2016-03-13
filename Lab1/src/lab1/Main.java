@@ -8,11 +8,11 @@ public class Main {
 		for (int j = 0; j < args.length; j++) {
 			disArr[j] = args[j].toLowerCase();
 		}
-
+//判断商品名字为几位
 		int i;
 		for (i = 0; i < disArr.length; i++)
 			if (disArr[i].equals("small") || disArr[i].equals("medium")
-					|| disArr[i].equals("large"))
+					|| disArr[i].equals("large") || disArr[i].equals("grand"))  //增加
 				break;
 
 		if (i >= disArr.length) {
@@ -48,6 +48,10 @@ public class Main {
 			order = new Espresso();
 			((CoffeeBeverage) order).setSize(disArr[i]);
 			order = new WhipCream(order);
+		} else if (beveStr.equals("decaf mocha")) {			//增加
+			order = new Decaf();
+			((CoffeeBeverage) order).setSize(disArr[i]);
+			order = new Chocolate(order);
 		} else if (beveStr.equals("green tea")) {
 			order = new GreenTea();
 			((TeaBeverage) order).setSize(disArr[i]);
