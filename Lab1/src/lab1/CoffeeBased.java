@@ -11,4 +11,3 @@ public class CoffeeBased extends SizeFactor {
 	}
 
 }
-//Test
