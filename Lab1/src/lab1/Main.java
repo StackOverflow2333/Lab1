@@ -10,11 +10,17 @@ public class Main {
 		}
 
 		int i;
+		
+		i_break:
 		for (i = 0; i < disArr.length; i++)
-			if (disArr[i].equals("small") || disArr[i].equals("medium")
-					|| disArr[i].equals("large"))
-				break;
-
+		
+			for (int j=0;j<SizeFactor.sizeIndex;j++){
+				if (disArr[i].equals(SizeFactor.sizeDes[j])){
+					break i_break;
+				}				
+			}
+		//ÕÒ³ösize
+		
 		if (i >= disArr.length) {
 			System.out.println("Must set a size!");
 			return;

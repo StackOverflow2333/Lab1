@@ -1,16 +1,13 @@
 package lab1;
 
-public class CoffeeBased implements SizeFactor {
+public class CoffeeBased extends SizeFactor {
 
-	@Override
-	public double sizeCost(String size) {
-		if (size.toLowerCase().equals("small")) {
-			return 0.4;
-		} else if (size.toLowerCase().equals("medium")) {
-			return 0.7;
-		} else {
-			return 1.0;
-		}
+	CoffeeBased(){
+		super();
+		sizePrice[0] = 0.4;//small
+		sizePrice[1] = 0.7;//medium
+		sizePrice[2] = 1.0;//large
+		sizePrice[3] = 1.3;//grant
 	}
 
 }
