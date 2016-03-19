@@ -4,7 +4,7 @@ public abstract class SizeFactor {
 	
 	
 	public static String[] sizeDes = new String[]{
-		"small","medium","large","grand"
+		"small","medium","large","grande"
 	};
 	public static int sizeIndex = sizeDes.length;
 	
