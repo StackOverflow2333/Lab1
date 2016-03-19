@@ -8,13 +8,19 @@ public class Main {
 		for (int j = 0; j < args.length; j++) {
 			disArr[j] = args[j].toLowerCase();
 		}
-//判断商品名字为几位
-		int i;
-		for (i = 0; i < disArr.length; i++)
-			if (disArr[i].equals("small") || disArr[i].equals("medium")
-					|| disArr[i].equals("large") || disArr[i].equals("grand"))  //增加
-				break;
 
+		int i;
+		
+		i_break:
+		for (i = 0; i < disArr.length; i++)
+		
+			for (int j=0;j<SizeFactor.sizeIndex;j++){
+				if (disArr[i].equals(SizeFactor.sizeDes[j])){
+					break i_break;
+				}				
+			}
+		//ÕÒ³ösize
+		
 		if (i >= disArr.length) {
 			System.out.println("Must set a size!");
 			return;
@@ -48,10 +54,6 @@ public class Main {
 			order = new Espresso();
 			((CoffeeBeverage) order).setSize(disArr[i]);
 			order = new WhipCream(order);
-		} else if (beveStr.equals("decaf mocha")) {			//增加
-			order = new Decaf();
-			((CoffeeBeverage) order).setSize(disArr[i]);
-			order = new Chocolate(order);
 		} else if (beveStr.equals("green tea")) {
 			order = new GreenTea();
 			((TeaBeverage) order).setSize(disArr[i]);
@@ -99,11 +101,12 @@ public class Main {
 		 * How do I get the description of each order instead of doing this
 		 * stupid thing forever (except for printing the args)?
 		 */
-		if (order instanceof BeverageWithIngredient) {
+	/*	if (order instanceof BeverageWithIngredient) {
 			((BeverageWithIngredient) order).getDescription();
 		} else if (order instanceof Espresso) {
 			((Espresso) order).getDescription();
-		}
+		}*/
+		System.out.println(order.getDescription());
 		// and so on...
 
 		DecimalFormat df = new DecimalFormat(".0");
