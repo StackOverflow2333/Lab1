@@ -19,6 +19,7 @@ public class MainTest {
 		System.setOut(cacheStream);
 	}
 
+
 	
 	@Test
 	public void testInput1() {
@@ -50,4 +51,5 @@ public class MainTest {
 			assertStr = "The total cost of your order is: ";
 		}
 }
+
 }
