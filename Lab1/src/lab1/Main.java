@@ -1,7 +1,6 @@
 package lab1;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 
 public class Main {
 	public static void main(String[] args){
@@ -10,14 +9,9 @@ public class Main {
 			disArr[j] = args[j].toLowerCase();
 		}
 
-
 		double cost = 0;
 		
-
 		int mode;    //表示输入的模式，0表示旧方式，1表示新方式，可以拓展新的方式
-
-		
-
 		if(Character.isDigit(args[0].charAt(0)))
 			mode = 1;
 		else
@@ -25,26 +19,24 @@ public class Main {
 		
 		//根据 mode选择不同的计算价格方式
 		switch(mode){
+		
 			case 0: {  //旧方式
-				cost = getCost(disArr);
+				cost = getCostOfOneDrink(disArr);
 				break;
 			}
 			
 			case 1: {  //新方式
 				String str = "";
-				for(int j = 1;j < disArr.length; j++) {
+				for(int j = 1;j < disArr.length; j++) 
 					str += disArr[j]+" ";
-				}
 				String[] strArr = str.split(" ; ");
-				
-				if(Integer.parseInt(args[0]) == strArr.length) {
+				if(Integer.parseInt(args[0]) == strArr.length) 
 					for(int j = 0;j < strArr.length;j++) {
-						if(getCost(strArr[j].split(" ")) == 0)
+						if(getCostOfOneDrink(strArr[j].split(" ")) == 0)
 							return;
 						else
-							cost += getCost(strArr[j].split(" "));
+							cost += getCostOfOneDrink(strArr[j].split(" "));
 					}
-				}
 				else {
 					System.out.println("Beverage number is wrong!");
 					return;
@@ -64,8 +56,7 @@ public class Main {
 	
 
 	//计算一杯饮料价格，参数为旧方式的参数  ：<beverage name>  <size>  [<ingredient 1, ingredient 2, ingredient 3>] ，返回double。
-
-	public static double getCost(String[] disArr) {
+	public static double getCostOfOneDrink(String[] disArr) {
 		
 		//判断商品名字为几位
 		int i;
@@ -86,8 +77,6 @@ public class Main {
 			beveStr = disArr[0];
 		}
 
-		
-		
 		Beverage order;
 		if (beveStr.equals("espresso")) {
 			order = new CoffeeBeverage();
@@ -168,8 +157,6 @@ public class Main {
 			((Espresso) order).getDescription();
 		}
 		// and so on...
-
-		
 		return order.cost();
 
 	}
