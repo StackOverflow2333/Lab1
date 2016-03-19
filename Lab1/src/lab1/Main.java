@@ -9,14 +9,16 @@ public class Main {
 			disArr[j] = args[j].toLowerCase();
 		}
 
-		int mode;    //表示输入的模式，0表示旧方式，1表示新方式
+		
 		double cost = 0;
+		
+		int mode;    //表示输入的模式，0表示旧方式，1表示新方式，可以拓展新的方式
 		if(Character.isDigit(args[0].charAt(0)))
 			mode = 1;
 		else
 			mode = 0;
 		
-		
+		//根据 mode选择不同的计算价格方式
 		switch(mode){
 			case 0: {  //旧方式
 				cost = getCost(disArr);
@@ -54,9 +56,11 @@ public class Main {
 				+ df.format(cost));
 	}
 	
+	
+	//计算一杯饮料价格，参数为旧方式的参数  ：<beverage name>  <size>  [<ingredient 1, ingredient 2, ingredient 3>] ，返回double。
 	public static double getCost(String[] disArr) {
 		
-//判断商品名字为几位
+		//判断商品名字为几位
 		int i;
 		for (i = 0; i < disArr.length; i++)
 			if (disArr[i].equals("small") || disArr[i].equals("medium")
