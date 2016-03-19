@@ -4,10 +4,10 @@ public class CoffeeBased extends SizeFactor {
 
 	CoffeeBased(){
 		super();
-		sizePrice[0] = 0.2;//small
-		sizePrice[1] = 0.5;//medium
-		sizePrice[2] = 0.7;//large
-		sizePrice[3] = 0.9;//grant
+		sizePrice[0] = 0.4;//small
+		sizePrice[1] = 0.7;//medium
+		sizePrice[2] = 1.0;//large
+		sizePrice[3] = 1.3;//grande
 		
 	}
 
