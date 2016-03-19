@@ -49,5 +49,5 @@ public class MainTest {
 			baoStream.reset();
 			assertStr = "The total cost of your order is: ";
 		}
-	}
+}
 }

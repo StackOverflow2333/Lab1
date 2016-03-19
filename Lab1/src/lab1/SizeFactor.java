@@ -1,8 +1,7 @@
 package lab1;
 
 public abstract class SizeFactor {
-	
-	
+
 	public static String[] sizeDes = new String[]{
 		"small","medium","large","grande"
 	};
@@ -28,4 +27,5 @@ public abstract class SizeFactor {
 		return 0;
 	}
 	
+
 }
