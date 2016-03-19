@@ -19,7 +19,7 @@ public class Test {
 		System.setOut(oldStream);//还原到控制台输出
 		System.out.println(strMsg);
 		
-
+		System.out.println(0.8+0.4);
 	}
 
 }

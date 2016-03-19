@@ -1,18 +1,23 @@
 package lab1;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		String[] disArr = new String[args.length];
 		for (int j = 0; j < args.length; j++) {
 			disArr[j] = args[j].toLowerCase();
 		}
 
-		
+
 		double cost = 0;
 		
+
 		int mode;    //表示输入的模式，0表示旧方式，1表示新方式，可以拓展新的方式
+
+		
+
 		if(Character.isDigit(args[0].charAt(0)))
 			mode = 1;
 		else
@@ -57,7 +62,9 @@ public class Main {
 	}
 	
 	
+
 	//计算一杯饮料价格，参数为旧方式的参数  ：<beverage name>  <size>  [<ingredient 1, ingredient 2, ingredient 3>] ，返回double。
+
 	public static double getCost(String[] disArr) {
 		
 		//判断商品名字为几位
@@ -146,8 +153,10 @@ public class Main {
 				order = new WhipCream(order);
 			} else {
 				System.out.println("Illegal input: " + disArr[i]);
+
 			}
 		}
+
 
 		/**
 		 * How do I get the description of each order instead of doing this
@@ -162,5 +171,7 @@ public class Main {
 
 		
 		return order.cost();
+
 	}
+	
 }
