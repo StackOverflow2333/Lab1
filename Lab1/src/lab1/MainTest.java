@@ -26,12 +26,14 @@ public class MainTest {
 		
 		
 		
-		String[] str ={"2","houseblend","small","whip","cream","milk",";","houseblend","whip","cream","milk"};
-		Main.main(str);
+		String[] str0 ={"2","houseblend","small","whip","cream","milk",";","houseblend","small","whip","cream","milk"};
+		String[] str1 ={"1","houseblend","small","whip","cream","milk"};
+		Main.main(str0);
 		String strMsg = baoStream.toString().trim();
 		System.setOut(oldStream);
-	//	System.out.println(strMsg);
-		Assert.assertEquals("The total cost of your order is: 2.0", strMsg);
+		//System.out.println(strMsg);
+		Assert.assertEquals("The total cost of your order is: 3.6", strMsg);
+
 /*		
 		baoStream.reset();
 		cacheStream = new PrintStream(baoStream);
