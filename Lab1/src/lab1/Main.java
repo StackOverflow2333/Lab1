@@ -62,7 +62,7 @@ public class Main {
 		int i;
 		for (i = 0; i < disArr.length; i++)
 			if (disArr[i].equals("small") || disArr[i].equals("medium")
-					|| disArr[i].equals("large") || disArr[i].equals("grand"))  //增加
+					|| disArr[i].equals("large") || disArr[i].equals("grande"))  //增加
 				break;
 
 		if (i >= disArr.length) {
