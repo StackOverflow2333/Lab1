@@ -8,6 +8,54 @@ public class Main {
 		for (int j = 0; j < args.length; j++) {
 			disArr[j] = args[j].toLowerCase();
 		}
+
+		int mode;    //表示输入的模式，0表示旧方式，1表示新方式
+		double cost = 0;
+		if(Character.isDigit(args[0].charAt(0)))
+			mode = 1;
+		else
+			mode = 0;
+		
+		
+		switch(mode){
+			case 0: {  //旧方式
+				cost = getCost(disArr);
+				break;
+			}
+			
+			case 1: {  //新方式
+				String str = "";
+				for(int j = 1;j < disArr.length; j++) {
+					str += disArr[j]+" ";
+				}
+				String[] strArr = str.split(" ; ");
+				
+				if(Integer.parseInt(args[0]) == strArr.length) {
+					for(int j = 0;j < strArr.length;j++) {
+						if(getCost(strArr[j].split(" ")) == 0)
+							return;
+						else
+							cost += getCost(strArr[j].split(" "));
+					}
+				}
+				else {
+					System.out.println("Beverage number is wrong!");
+					return;
+				}
+				break;
+			}
+			
+			
+		}
+		
+
+		DecimalFormat df = new DecimalFormat(".0");
+		System.out.println("The total cost of your order is: "
+				+ df.format(cost));
+	}
+	
+	public static double getCost(String[] disArr) {
+		
 //判断商品名字为几位
 		int i;
 		for (i = 0; i < disArr.length; i++)
@@ -17,7 +65,7 @@ public class Main {
 
 		if (i >= disArr.length) {
 			System.out.println("Must set a size!");
-			return;
+			return 0;
 		}
 
 		String beveStr;
@@ -27,6 +75,8 @@ public class Main {
 			beveStr = disArr[0];
 		}
 
+		
+		
 		Beverage order;
 		if (beveStr.equals("espresso")) {
 			order = new CoffeeBeverage();
@@ -75,7 +125,7 @@ public class Main {
 			order = new Milk(order);
 		} else {
 			System.out.println("Illegal input: " + beveStr);
-			return;
+			return 0;
 		}
 
 		for (i++; i < disArr.length; i++) {
@@ -106,8 +156,7 @@ public class Main {
 		}
 		// and so on...
 
-		DecimalFormat df = new DecimalFormat(".0");
-		System.out.println("The total cost of your order is: "
-				+ df.format(order.cost()));
+		
+		return order.cost();
 	}
 }

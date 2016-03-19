@@ -23,13 +23,13 @@ public class MainTest {
 
 	@Test
 	public void test() {
-		String[] str ={"houseblend","large","whip"};
+		String[] str ={"2","houseblend","large","whip",";","houseblend","large","whip"};
 		Main.main(str);
 		String strMsg = baoStream.toString().trim();
 		System.setOut(oldStream);
 	//	System.out.println(strMsg);
-		Assert.assertEquals("The total cost of your order is: 2.1", strMsg);
-		
+		Assert.assertEquals("The total cost of your order is: 4.2", strMsg);
+	/*	
 		baoStream.reset();
 		cacheStream = new PrintStream(baoStream);
 		oldStream = System.out;
@@ -41,7 +41,7 @@ public class MainTest {
 		System.setOut(oldStream);
 	//	System.out.println(strMsg);
 		Assert.assertEquals("The total cost of your order is: 2.1", strMsg);
-		
+	*/	
 	}
 
 }
