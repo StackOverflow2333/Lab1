@@ -19,8 +19,7 @@ public class Main {
 					break i_break;
 				}				
 			}
-		//ÕÒ³ösize
-		
+
 		if (i >= disArr.length) {
 			System.out.println("Must set a size!");
 			return;
