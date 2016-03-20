@@ -20,7 +20,7 @@ public class MainTest {
 	}
 	
 	@Test
-	public void testInput1() {
+	public void testInputOldWay() {
 		String[] str = new String[5];
 		str[0] = "white";
 		str[1] = "tea"; 
@@ -48,7 +48,7 @@ public class MainTest {
 	}
 	
 	@Test
-	public void testInput2() {
+	public void testInputNewWay() {
 		String[] str = {"2","houseblend","small","milk","chocolate",";","houseblend","small","milk","chocolate"};
 		Main.main(str);
 		String strMsg = baoStream.toString().trim();
@@ -68,5 +68,59 @@ public class MainTest {
 		baoStream.reset();
 	
 	}
+	
+	@Test
+	public void testBeverageErrorInput() {
+		String[] str = {"2","housblend","small","milk","chocolate",";","houseblend","small","milk","chocolate"};
+		Main.main(str);
+		String strMsg = baoStream.toString().trim();
+		Assert.assertEquals("Illegal input: housblend", strMsg);
+		baoStream.reset();	
+	}
+	@Test
+	public void testIngredientErroInput(){
+		String[] str = {"3","houseblend","small","milk","chocolate",";","houseblend","small","mil","chocolate",";","houseblend","small","milk","chocolate"};
+		Main.main(str);
+		String strMsg = baoStream.toString().trim();
+		Assert.assertEquals("Illegal input: mil", strMsg);
+		baoStream.reset();
+	}
+	@Test 
+	public void testSizeErroInput(){
+		String[] str = {"2","housblend","mall","milk","chocolate",";","houseblend","small","milk","chocolate"};
+		Main.main(str);
+		String strMsg = baoStream.toString().trim();
+		Assert.assertEquals("Must set a size!", strMsg);
+		baoStream.reset();	
+	}
+	@Test 
+	public void testNumErroInput(){
+		String[] str = {"3","housblend","mall","milk","chocolate",";","houseblend","small","milk","chocolate"};
+		Main.main(str);
+		String strMsg = baoStream.toString().trim();
+		Assert.assertEquals("Illegal input: 3", strMsg);
+		baoStream.reset();	
+	}	
+	@Test
+	public void testErroInput(){
+		String[] str = {"3","houseblend","uihkjhkn","klkl","small","milk","chocolate",";","houseblend","small","milk","chocolate",";","houseblend","small","milk","chocolate"};
+		Main.main(str);
+		String strMsg = baoStream.toString().trim();
+		Assert.assertEquals("Illegal input: houseblend uihkjhkn klkl", strMsg);
+		baoStream.reset();
+	}
+	@Test
+	public void testErroInput2(){//error: no name
+		String[] str = {"3","small","milk","chocolate",";","houseblend","small","milk","chocolate",";","houseblend","small","milk","chocolate"};
+		Main.main(str);
+		String strMsg = baoStream.toString().trim();
+		Assert.assertEquals("Must set a name!", strMsg);
+		baoStream.reset();
+	}
+		
+		
+	
+	
+	
 	
 }

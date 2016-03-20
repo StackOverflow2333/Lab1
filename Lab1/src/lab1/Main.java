@@ -99,62 +99,72 @@ public class Main {
 
 		if (i == 2) {
 			beveStr = disArr[0] + " " + disArr[1];
-		} else {
+		} else if (i==1){
 			beveStr = disArr[0];
+		} else if (i==0){			
+			System.out.println("Must set a name!" );
+			return 0;
+		} else{
+			beveStr = disArr[0];
+			for (int k=1;k<i;k++){
+				beveStr += " "+disArr[k];
+			}
+			System.out.println("Illegal input: " + beveStr);
+			return 0;
 		}
 
 		if (beveStr.equals("espresso")) {
-			// order = new CoffeeBeverage();
+			
 			order = new Espresso();
-			//((CoffeeBeverage) order).setSize(disArr[i]);
+			
 		} else if (beveStr.equals("houseblend")) {
-			// order = new CoffeeBeverage();
+			
 			order = new HouseBlend();
-			//((CoffeeBeverage) order).setSize(disArr[i]);
+			
 		} else if (beveStr.equals("mocha")) {
 			order = new Espresso();
-			//((CoffeeBeverage) order).setSize(disArr[i]);
+			
 			order = new Chocolate(order);
 		} else if (beveStr.equals("latte")) {
 			order = new Espresso();
-			//((CoffeeBeverage) order).setSize(disArr[i]);
+			
 			order = new Milk(order);
 		} else if (beveStr.equals("cappuccino")) {
 			order = new Espresso();
-			//((CoffeeBeverage) order).setSize(disArr[i]);
+			
 			order = new WhipCream(order);
 		} else if (beveStr.equals("decaf mocha")) { // new add
 			order = new Decaf();
-			//((CoffeeBeverage) order).setSize(disArr[i]);
+			
 			order = new Chocolate(order);
 		} else if (beveStr.equals("decaf latte")) { // new add
 			order = new Decaf();
-			//((CoffeeBeverage) order).setSize(disArr[i]);
+			
 			order = new Milk(order);
 		} else if (beveStr.equals("decaf cappuccino")) { // new add
 			order = new Decaf();
-			//((CoffeeBeverage) order).setSize(disArr[i]);
+			
 			order = new WhipCream(order);
 		} else if (beveStr.equals("green tea")) {
 			order = new GreenTea();
-			//((TeaBeverage) order).setSize(disArr[i]);
+			
 		} else if (beveStr.equals("red tea")) {
 			order = new RedTea();
-			//((TeaBeverage) order).setSize(disArr[i]);
+			
 		} else if (beveStr.equals("white tea")) {
 			order = new WhiteTea();
-			//((TeaBeverage) order).setSize(disArr[i]);
+			
 		} else if (beveStr.equals("flower tea")) {
 			order = new GreenTea();
-			//((TeaBeverage) order).setSize(disArr[i]);
+			
 			order = new Jasmine(order);
 		} else if (beveStr.equals("ginger tea")) {
 			order = new GreenTea();
-			//((TeaBeverage) order).setSize(disArr[i]);
+			
 			order = new Ginger(order);
 		} else if (beveStr.equals("tea latte")) {
 			order = new RedTea();
-			//((TeaBeverage) order).setSize(disArr[i]);
+			
 			order = new Milk(order);
 		} else {
 			System.out.println("Illegal input: " + beveStr);
@@ -183,18 +193,12 @@ public class Main {
 		 * How do I get the description of each order instead of doing this
 		 * stupid thing forever (except for printing the args)?
 		 */
-		/*
-		 * if (order instanceof BeverageWithIngredient) {
-		 * ((BeverageWithIngredient) order).getDescription(); } else if (order
-		 * instanceof Espresso) { ((Espresso) order).getDescription(); }
-		 */
-		// and so on...
+		
 
 		order.getDescription();
 
 		DecimalFormat df = new DecimalFormat(".0");
-		// System.out.println("The total cost of your order is: "
-		// + df.format(order.cost()));
+		
 		return Double.valueOf(df.format(order.cost()));
 	}
 }
