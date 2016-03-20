@@ -10,6 +10,4 @@ public class CoffeeBased extends SizeFactor {
 		sizePrice[3] = 1.3;//grande
 		
 	}
-
 }
-//Test
