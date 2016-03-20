@@ -23,14 +23,15 @@ public class Main {
 			case 0: {  //旧方式
 				cost = getCostOfOneDrink(disArr);
 				break;
+
 			}
-			
+
 			case 1: {  //新方式
 				cost = getCostOfSeveralDrink(disArr);
 				break;
+
 			}
-			
-			
+				
 		}
 		
 		if(cost == 0)
@@ -42,6 +43,7 @@ public class Main {
 	}
 	
 	
+
 
 	//计算一杯饮料价格，参数为旧方式的参数  ：<beverage name>  <size>  [<ingredient 1, ingredient 2, ingredient 3>] ，返回double。
 	public static double getCostOfOneDrink(String[] disArr) {
@@ -189,3 +191,4 @@ public class Main {
 		return cost;
 	}
 }
+
