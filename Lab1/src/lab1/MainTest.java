@@ -18,7 +18,7 @@ public class MainTest {
 		cacheStream = new PrintStream(baoStream);
 		System.setOut(cacheStream);
 	}
-
+	
 	@Test
 	public void testInput1() {
 		String[] str = new String[5];
@@ -68,5 +68,5 @@ public class MainTest {
 		baoStream.reset();
 	
 	}
-
+	
 }
