@@ -3,9 +3,8 @@ package lab1;
 import java.text.DecimalFormat;
 
 public class CalOldInput {
-	public CalOldInput(){
-	}
-	public double oldCal(String[] args) {
+	
+	public static double oldCal(String[] args) {
 		String[] disArr = new String[args.length];
 		for (int j = 0; j < args.length; j++) {
 			disArr[j] = args[j].toLowerCase();
@@ -14,13 +13,18 @@ public class CalOldInput {
 		String beveStr;
 		Beverage order = new Beverage();
 
-			//判断商品名字为几位
+			//鍒ゆ柇鍟嗗搧鍚嶅瓧涓哄嚑浣�
 			int i;
-			for (i = 0; i < disArr.length; i++)
-				if (disArr[i].equals("small") || disArr[i].equals("medium")
-						|| disArr[i].equals("large") || disArr[i].equals("grande"))  //增加
+			i_break:
+			for (i = 0; i < disArr.length; i++){
 
-					break;
+				for (int j=0;j<SizeFactor.sizeIndex;j++){
+					if (disArr[i].equals(SizeFactor.sizeDes[j])){
+						break i_break;
+					}				
+				}
+			}
+				
 
 			if (i >= disArr.length) {
 				System.out.println("Must set a size!");
@@ -55,15 +59,15 @@ public class CalOldInput {
 				order = new Espresso();
 				((CoffeeBeverage) order).setSize(disArr[i]);
 				order = new WhipCream(order);
-			} else if (beveStr.equals("decaf mocha")) {			//增加
+			} else if (beveStr.equals("decaf mocha")) {			//澧炲姞
 				order = new Decaf();
 				((CoffeeBeverage) order).setSize(disArr[i]);
 				order = new Chocolate(order);
-			} else if (beveStr.equals("decaf latte")) {			//增加
+			} else if (beveStr.equals("decaf latte")) {			//澧炲姞
 				order = new Decaf();
 				((CoffeeBeverage) order).setSize(disArr[i]);
 				order = new Milk(order);
-			} else if (beveStr.equals("decaf cappuccino")) {	//增加
+			} else if (beveStr.equals("decaf cappuccino")) {	//澧炲姞
 				order = new Decaf();
 				((CoffeeBeverage) order).setSize(disArr[i]);
 				order = new WhipCream(order);

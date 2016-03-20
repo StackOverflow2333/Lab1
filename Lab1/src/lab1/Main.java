@@ -11,11 +11,12 @@ public class Main {
 		}
 		double cost = 0;
 		int num_of_drink = 1 ;
-		CalOldInput coi = new CalOldInput();
+		
 		//判断是不是旧式输入
 		if (!Character.isDigit(disArr[0].charAt(0))){
-			cost = coi.oldCal(args);
+			cost = CalOldInput.oldCal(args);
 		}else {
+			
 			for (int i = 0 ; i < args.length ; i++){
 				if (disArr[i].equals(";"))
 					num_of_drink++;
@@ -38,7 +39,7 @@ public class Main {
 						input[j] = disArr[index.get(i-1)+1+j];
 						//System.out.println(input[j]);
 					}
-					cost += coi.oldCal(input);
+					cost += CalOldInput.oldCal(input);
 				}
 			}
 		}
