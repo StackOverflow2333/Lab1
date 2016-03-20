@@ -7,9 +7,9 @@ public class Decaf extends CoffeeBeverage {
 		description = "Decaf";
 	}
 	
-	public String getDescription() {
+/*	public String getDescription() {
 		return description;
-	}
+	}*/
 
 	public double cost() {
 		return super.cost() + 0.5;
