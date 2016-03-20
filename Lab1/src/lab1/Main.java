@@ -80,60 +80,61 @@ public class Main {
 			if (beveStr.equals("espresso")) {
 				//order = new CoffeeBeverage();
 				order = new Espresso();
-				((CoffeeBeverage) order).setSize(disArr[i]);
+				//((CoffeeBeverage) order).setSize(disArr[i]);
 			} else if (beveStr.equals("houseblend")) {
 				//order = new CoffeeBeverage();
 				order = new HouseBlend();
-				((CoffeeBeverage) order).setSize(disArr[i]);
+				//((CoffeeBeverage) order).setSize(disArr[i]);
 			} else if (beveStr.equals("mocha")) {
 				order = new Espresso();
 				((CoffeeBeverage) order).setSize(disArr[i]);
 				order = new Chocolate(order);
 			} else if (beveStr.equals("latte")) {
 				order = new Espresso();
-				((CoffeeBeverage) order).setSize(disArr[i]);
+				//((CoffeeBeverage) order).setSize(disArr[i]);
 				order = new Milk(order);
 			} else if (beveStr.equals("cappuccino")) {
 				order = new Espresso();
-				((CoffeeBeverage) order).setSize(disArr[i]);
+				//((CoffeeBeverage) order).setSize(disArr[i]);
 				order = new WhipCream(order);
 			} else if (beveStr.equals("decaf mocha")) {			//澧炲姞
 				order = new Decaf();
-				((CoffeeBeverage) order).setSize(disArr[i]);
+				//((CoffeeBeverage) order).setSize(disArr[i]);
 				order = new Chocolate(order);
 			} else if (beveStr.equals("decaf latte")) {			//澧炲姞
 				order = new Decaf();
-				((CoffeeBeverage) order).setSize(disArr[i]);
+				//((CoffeeBeverage) order).setSize(disArr[i]);
 				order = new Milk(order);
 			} else if (beveStr.equals("decaf cappuccino")) {	//澧炲姞
 				order = new Decaf();
-				((CoffeeBeverage) order).setSize(disArr[i]);
+				//((CoffeeBeverage) order).setSize(disArr[i]);
 				order = new WhipCream(order);
 			} else if (beveStr.equals("green tea")) {
 				order = new GreenTea();
-				((TeaBeverage) order).setSize(disArr[i]);
+				//((TeaBeverage) order).setSize(disArr[i]);
 			} else if (beveStr.equals("red tea")) {
 				order = new RedTea();
-				((TeaBeverage) order).setSize(disArr[i]);
+				//((TeaBeverage) order).setSize(disArr[i]);
 			} else if (beveStr.equals("white tea")) {
 				order = new WhiteTea();
-				((TeaBeverage) order).setSize(disArr[i]);
+				//((TeaBeverage) order).setSize(disArr[i]);
 			} else if (beveStr.equals("flower tea")) {
 				order = new GreenTea();
-				((TeaBeverage) order).setSize(disArr[i]);
+				//((TeaBeverage) order).setSize(disArr[i]);
 				order = new Jasmine(order);
 			} else if (beveStr.equals("ginger tea")) {
 				order = new GreenTea();
-				((TeaBeverage) order).setSize(disArr[i]);
+				//((TeaBeverage) order).setSize(disArr[i]);
 				order = new Ginger(order);
 			} else if (beveStr.equals("tea latte")) {
 				order = new RedTea();
-				((TeaBeverage) order).setSize(disArr[i]);
+				//((TeaBeverage) order).setSize(disArr[i]);
 				order = new Milk(order);
 			} else {
 				System.out.println("Illegal input: " + beveStr);
 				return 0;
 			}
+			order.setSize(disArr[i]);
 
 			for (i++; i < disArr.length; i++) {
 				if (disArr[i].equals("chocolate")) {
