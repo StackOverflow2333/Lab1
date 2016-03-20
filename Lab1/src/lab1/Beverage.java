@@ -1,6 +1,6 @@
 package lab1;
 
-public class Beverage {
+public abstract class Beverage {
 	protected SizeFactor sizeFactor;
 	protected String description="";
 	protected String size;

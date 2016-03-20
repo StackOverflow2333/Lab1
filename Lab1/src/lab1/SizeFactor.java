@@ -23,7 +23,7 @@ public abstract class SizeFactor {
 				return sizePrice[i];
 			}
 		}
-		System.out.println("Wrong Size Description");
+		//System.out.println("Wrong Size Description");
 		return 0;
 	}
 	

@@ -79,7 +79,7 @@ public class Main {
 		}
 
 		String beveStr;
-		Beverage order = new Beverage();
+		Beverage order ;
 
 		// judge the size
 		int i;
