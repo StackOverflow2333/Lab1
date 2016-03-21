@@ -78,7 +78,7 @@ public class MainTest {
 		baoStream.reset();	
 	}
 	@Test
-	public void testIngredientErroInput(){
+	public void testIngredientErrorInput(){
 		String[] str = {"3","houseblend","small","milk","chocolate",";","houseblend","small","mil","chocolate",";","houseblend","small","milk","chocolate"};
 		Main.main(str);
 		String strMsg = baoStream.toString().trim();
@@ -86,7 +86,7 @@ public class MainTest {
 		baoStream.reset();
 	}
 	@Test 
-	public void testSizeErroInput(){
+	public void testSizeErrorInput(){
 		String[] str = {"2","housblend","mall","milk","chocolate",";","houseblend","small","milk","chocolate"};
 		Main.main(str);
 		String strMsg = baoStream.toString().trim();
@@ -94,7 +94,7 @@ public class MainTest {
 		baoStream.reset();	
 	}
 	@Test 
-	public void testNumErroInput(){
+	public void testNumErrorInput(){
 		String[] str = {"3","housblend","mall","milk","chocolate",";","houseblend","small","milk","chocolate"};
 		Main.main(str);
 		String strMsg = baoStream.toString().trim();
@@ -102,7 +102,7 @@ public class MainTest {
 		baoStream.reset();	
 	}	
 	@Test
-	public void testErroInput(){
+	public void testErrorInput(){
 		String[] str = {"3","houseblend","uihkjhkn","klkl","small","milk","chocolate",";","houseblend","small","milk","chocolate",";","houseblend","small","milk","chocolate"};
 		Main.main(str);
 		String strMsg = baoStream.toString().trim();
@@ -110,11 +110,27 @@ public class MainTest {
 		baoStream.reset();
 	}
 	@Test
-	public void testErroInput2(){//error: no name
+	public void testErrorInput2(){//error: no name
 		String[] str = {"3","small","milk","chocolate",";","houseblend","small","milk","chocolate",";","houseblend","small","milk","chocolate"};
 		Main.main(str);
 		String strMsg = baoStream.toString().trim();
 		Assert.assertEquals("Must set a name!", strMsg);
+		baoStream.reset();
+	}
+	@Test
+	public void testErrorInput3(){//error: no name
+		String[] str = {"1"};
+		Main.main(str);
+		String strMsg = baoStream.toString().trim();
+		Assert.assertEquals("Must set a size!", strMsg);
+		baoStream.reset();
+	}
+	@Test
+	public void testErrorInput4(){//error: no name
+		String[] str = {};
+		Main.main(str);
+		String strMsg = baoStream.toString().trim();
+		Assert.assertEquals("Must set a size!", strMsg);
 		baoStream.reset();
 	}
 		

@@ -5,6 +5,10 @@ import java.util.ArrayList;
 
 public class Main {
 	public static void main(String[] args) {
+		if (args.length==0){
+			System.out.println("Must set a size!");
+			return;
+		}
 		String[] disArr = new String[args.length];
 		for (int j = 0; j < args.length; j++) {
 			disArr[j] = args[j].toLowerCase();
@@ -12,14 +16,12 @@ public class Main {
 		double cost;
 		//choose old or new function
 		if (!Character.isDigit(disArr[0].charAt(0))){
-			if (oldCal(disArr)!=0)
-				cost = oldCal(disArr);
-			else
+			cost = oldCal(disArr);
+			if (cost==0)
 				return;
 		}else {
-			if (newCal(disArr)!=0)
-				cost = newCal(disArr);
-			else
+			cost = newCal(disArr);
+			if (cost==0)
 				return;
 		}
 		DecimalFormat df = new DecimalFormat(".0");
